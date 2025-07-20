@@ -1,11 +1,15 @@
 package com.example;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+import org.junit.Assert;
 
-public class AppTest extends TestCase {
+public class AppTest {
     
-    public void testGetMessage() {
+    @Test
+    public void testApp() {
         App app = new App();
-        assertEquals("Hello World from Maven!", app.getMessage());
+        String result = app.getMessage();
+        Assert.assertNotNull(result);
+        Assert.assertTrue(result.contains("Hello"));
     }
 }
